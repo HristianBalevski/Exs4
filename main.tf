@@ -9,6 +9,12 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "azurem" {
+    resource_group_name  = "StorageRG"
+    storage_account_name = "hristaskboardaccount"
+    container_name       = "tbhriscontainer"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
